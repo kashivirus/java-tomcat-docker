@@ -1,8 +1,3 @@
-// java-tomcat-sample/pom.xml
-
-
-
-
 pipeline {
     agent any
     stages {
@@ -18,20 +13,13 @@ pipeline {
             }
         }
 
-        stage("Create Tomcat Docker Image"){
-            steps{
+        stage('Create Tomcat Docker Image'){
+            steps {
                 sh "pwd"
-                sh "la -a"
+                sh "ls -a"
                 sh "docker build . -t tomcatsamplewebapp:${env.BUILD_ID}"
             }
         }
+
     }
 }
-
-
-
-
-
-
-
- 

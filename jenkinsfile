@@ -17,7 +17,7 @@ pipeline{
 
         stage("Create Tomcat Docker Image"){
             steps{
-                sh "sudo chmod 666 /var/run/docker.sock"
+                // sh "sudo chmod 666 /var/run/docker.sock"
                 sh "pwd"
                 sh "ls -a"
                 sh "docker build . -t tomcatsamplewebapp:${env.BUILD_ID}"
